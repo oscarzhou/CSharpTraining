@@ -44,24 +44,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmMain.cs">
+    <Compile Include="DelegateCounter\FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMain.Designer.cs">
+    <Compile Include="DelegateCounter\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSub.cs">
+    <Compile Include="DelegateCounter\FrmSub.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSub.Designer.cs">
+    <Compile Include="DelegateCounter\FrmSub.Designer.cs">
       <DependentUpon>FrmSub.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmMain.resx">
+    <EmbeddedResource Include="DelegateCounter\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSub.resx">
+    <EmbeddedResource Include="DelegateCounter\FrmSub.resx">
       <DependentUpon>FrmSub.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
