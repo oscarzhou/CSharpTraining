@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CSharpTraining.DelegateMsg;
+using System;
 using System.Windows.Forms;
 
 namespace CSharpTraining
@@ -16,7 +14,7 @@ namespace CSharpTraining
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
+            Application.Run(new FrmServer());
         }
     }
 }

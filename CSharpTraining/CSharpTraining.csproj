@@ -56,6 +56,24 @@
     <Compile Include="DelegateCounter\FrmSub.Designer.cs">
       <DependentUpon>FrmSub.cs</DependentUpon>
     </Compile>
+    <Compile Include="DelegateMsg\FrmClient1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DelegateMsg\FrmClient1.Designer.cs">
+      <DependentUpon>FrmClient1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DelegateMsg\FrmClient2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DelegateMsg\FrmClient2.Designer.cs">
+      <DependentUpon>FrmClient2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DelegateMsg\FrmServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DelegateMsg\FrmServer.Designer.cs">
+      <DependentUpon>FrmServer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DelegateCounter\FrmMain.resx">
@@ -63,6 +81,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DelegateCounter\FrmSub.resx">
       <DependentUpon>FrmSub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DelegateMsg\FrmClient1.resx">
+      <DependentUpon>FrmClient1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DelegateMsg\FrmClient2.resx">
+      <DependentUpon>FrmClient2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DelegateMsg\FrmServer.resx">
+      <DependentUpon>FrmServer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
