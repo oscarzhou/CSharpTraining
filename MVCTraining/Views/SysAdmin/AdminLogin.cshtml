@@ -1,0 +1,21 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>    
+    <title>Login Page</title>
+
+</head>
+<body>
+<form method="post" action="/SysAdmin/Login">
+    User Name: <input type="text" name="loginId"/><br/>
+    Password: <input type="password" name="loginPwd"/><br/>
+    <input type="submit" value="Login"/>
+</form>
+    
+<div>
+    @ViewData["info"]
+</div>
+</body>
+</html>
