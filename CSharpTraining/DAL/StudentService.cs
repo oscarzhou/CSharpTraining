@@ -48,5 +48,27 @@ namespace DAL
                 throw;
             }
         }
+
+        public int InsertStudent(Student objStudent)
+        {
+            StringBuilder sqlBuilder = new StringBuilder();
+            sqlBuilder.Append(
+                "insert into [dbo].[Students] (StudentName, Gender, Birthday, StudentIdNo, CardNo, PhoneNumber, StudentAddress, ClassId) ");
+            sqlBuilder.Append("values('{0}', '{1}', '{2}', {3}, '{4}', '{5}', '{6}', {7})");
+            string sql = string.Format(sqlBuilder.ToString(), objStudent.StudentName, objStudent.Gender,
+                objStudent.Birthday, objStudent.StudentIdNo, objStudent.CardNo, objStudent.PhoneNumber,
+                objStudent.StudentAddress, objStudent.ClassId);
+
+            try
+            {
+                return SQLHelper.Update(sql);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
+        }
     }
 }

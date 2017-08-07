@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Helper\SQLHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentClassService.cs" />
     <Compile Include="StudentService.cs" />
     <Compile Include="SysAdminService.cs" />
   </ItemGroup>

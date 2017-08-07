@@ -1,5 +1,6 @@
 ﻿using BLL;
 using Model;
+using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -24,6 +25,33 @@ namespace MVCTraining.Controllers
             ViewBag.stuList = objStudents;
 
             return View("StudentManage");
+        }
+
+        public ActionResult NewStudent()
+        {
+            List<StudentClass> objStudentClasses = new StudentClassManage().GetAllClasses();
+            ViewBag.clsList = objStudentClasses;
+            return View("AddStudent");
+        }
+
+        public ActionResult AddStudent()
+        {
+            Student objStudent = new Student()
+            {
+                StudentName = Request.Params["studentName"],
+                Gender = Request.Params["gender"],
+                Birthday = Convert.ToDateTime( Request.Params["birthday"]),
+                StudentIdNo = Request.Params["studentIdNo"],
+                CardNo = Request.Params["cardNo"],
+                PhoneNumber = Request.Params["phoneNumber"],
+                StudentAddress = Request.Params["studentAddress"],
+                ClassId = Convert.ToInt32(Request.Params["ClassId"]) 
+            };
+
+            int result = new StudentManage().InsertStudent(objStudent);
+
+            return Content("<script>alert('Add Successfully'); document.location='"+Url.Action("Index", "Student")+"'</script>");
+
         }
 
     }

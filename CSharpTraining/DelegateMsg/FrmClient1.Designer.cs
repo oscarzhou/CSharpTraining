@@ -37,12 +37,12 @@
             this.tbClient.Location = new System.Drawing.Point(53, 47);
             this.tbClient.Multiline = true;
             this.tbClient.Name = "tbClient";
-            this.tbClient.Size = new System.Drawing.Size(669, 407);
+            this.tbClient.Size = new System.Drawing.Size(622, 189);
             this.tbClient.TabIndex = 0;
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(318, 484);
+            this.btnSend.Location = new System.Drawing.Point(309, 284);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(132, 55);
             this.btnSend.TabIndex = 1;
@@ -54,7 +54,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 564);
+            this.ClientSize = new System.Drawing.Size(720, 358);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.tbClient);
             this.Name = "FrmClient1";

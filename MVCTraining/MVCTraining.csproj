@@ -119,9 +119,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Styles\AddStudent.css" />
     <Content Include="Styles\AdminLogin.css" />
     <Content Include="Styles\bootstrap.css" />
+    <Content Include="Styles\jquery-3.1.1.min.js" />
     <Content Include="Styles\StudentManage.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -157,6 +160,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Student\AddStudent.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
