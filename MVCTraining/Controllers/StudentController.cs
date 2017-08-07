@@ -13,6 +13,11 @@ namespace MVCTraining.Controllers
 
         public ActionResult Index()
         {
+            if (System.Web.HttpContext.Current.Session["query"] != null)
+            {
+                List<Student> objStudents = new StudentManage().GetListByClassId(System.Web.HttpContext.Current.Session["query"].ToString());
+                ViewBag.stuList = objStudents;
+            }
             return View("StudentManage");
         }
 
@@ -87,7 +92,7 @@ namespace MVCTraining.Controllers
                 Birthday = Convert.ToDateTime(Request.Params["birthday"]),
                 StudentIdNo = Request.Params["studentIdNo"],
                 CardNo = Request.Params["cardNo"],
-                PhoneNumber = Request.Params["photoNumber"],
+                PhoneNumber = Request.Params["phoneNumber"],
                 StudentAddress = Request.Params["studentAddress"],
                 ClassId = Convert.ToInt32(Request.Params["classId"])
             };
@@ -95,6 +100,14 @@ namespace MVCTraining.Controllers
             int result = new StudentManage().EditStudent(objStudent);
 
             return Content("<script>alert('Modify Successfully'); document.location='" + Url.Action("Index", "Student") + "'</script>");
+        }
+
+        public ActionResult DeleteStudent()
+        {
+            string studentId = Request.QueryString["stuId"];
+            int result = new StudentManage().DeleteStudent(studentId);
+
+            return Content("<script>alert('Delete Successfully'); document.location='" + Url.Action("Index", "Student") + "'</script>");
         }
     }
 }

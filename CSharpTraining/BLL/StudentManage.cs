@@ -1,6 +1,7 @@
 ﻿using DAL;
 using Model;
 using System.Collections.Generic;
+using System.Web;
 
 namespace BLL
 {
@@ -9,6 +10,11 @@ namespace BLL
         private StudentService objStudentService = new StudentService();
         public List<Student> GetListByClassId(string className)
         {
+            if (className != null)
+            {
+                //将搜索条件保存到session
+                HttpContext.Current.Session["query"] = className;
+            }
             return objStudentService.GetListByClassId(className);
         }
 
@@ -25,6 +31,11 @@ namespace BLL
         public int EditStudent(Student objStudent)
         {
             return objStudentService.EditStudent(objStudent);
+        }
+
+        public int DeleteStudent(string stuId)
+        {
+            return objStudentService.DeleteStudent(stuId);
         }
     }
 }

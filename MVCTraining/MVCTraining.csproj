@@ -124,6 +124,7 @@
     <Content Include="Styles\AddStudent.css" />
     <Content Include="Styles\AdminLogin.css" />
     <Content Include="Styles\bootstrap.css" />
+    <Content Include="Styles\EditStudent.css" />
     <Content Include="Styles\jquery-3.1.1.min.js" />
     <Content Include="Styles\StudentManage.css" />
     <Content Include="Styles\ViewStudent.css" />

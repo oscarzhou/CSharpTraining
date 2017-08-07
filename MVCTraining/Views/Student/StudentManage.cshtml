@@ -5,6 +5,7 @@
 
 @{
     string adminName = ((SysAdmin) Session["CurrentAdmin"]).AdminName;
+    string query = (string) Session["query"];
 }
 
 <html>
@@ -24,7 +25,7 @@
 <br/>
 <div class="query-div">
     <form method="post" action="/Student/GetList">
-        Class Query: <input type="text" name="query" value="@ViewBag.className"/>
+        Class Query: <input type="text" name="query" value="@query" />
         <input class="btn btn-primary" type="submit" value="Query" />
         <a href="/Student/NewStudent"><input class="btn btn-primary" type="button" value="New Student" /></a>    
     </form>
@@ -53,7 +54,7 @@
                     <a href="/Student/ViewStudent/?stuId=@objStudent.StudentId">View</a>
                 </td>
                 <td>
-                    <a href="#">Delete</a>
+                    <a href="/Student/DeleteStudent/?stuId=@objStudent.StudentId">Delete</a>
                 </td>
             </tr>
         }

@@ -1,6 +1,7 @@
 ﻿body {
     width: 90%;
     margin: 0 auto;
+    margin-bottom: 100px;
 }
 
 
@@ -8,4 +9,9 @@ form {
     text-align: left;
 }
 
+
+.btn-area {
+    text-align: right;
+
+}
 

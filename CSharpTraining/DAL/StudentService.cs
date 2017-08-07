@@ -124,5 +124,23 @@ namespace DAL
                 throw;
             }
         }
+
+        public int DeleteStudent(string stuId)
+        {
+            StringBuilder sqlbuBuilder = new StringBuilder();
+            sqlbuBuilder.Append("delete from [dbo].[Students] where StudentId={0}");
+            string sql = string.Format(sqlbuBuilder.ToString(), stuId);
+
+            try
+            {
+                return SQLHelper.Update(sql);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
+        }
     }
 }
