@@ -16,5 +16,10 @@ namespace BLL
         {
             return objStudentService.InsertStudent(objStudent);
         }
+
+        public Student GetStudent(string studentId)
+        {
+            return objStudentService.GetStudent(studentId);
+        }
     }
 }

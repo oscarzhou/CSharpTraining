@@ -70,5 +70,38 @@ namespace DAL
             }
 
         }
+
+        public Student GetStudent(string studentId)
+        {
+            StringBuilder sqlBuilder = new StringBuilder();
+            sqlBuilder.Append("select * from [dbo].[Students] where StudentId={0}");
+            string sql = string.Format(sqlBuilder.ToString(), studentId);
+
+            try
+            {
+                SqlDataReader objReader = SQLHelper.GetDataReader(sql);
+                Student objStudent = new Student();
+                if (objReader.Read())
+                {
+                    objStudent.StudentId = Convert.ToInt32(studentId);
+                    objStudent.StudentName = objReader["StudentName"].ToString();
+                    objStudent.Gender = objReader["Gender"].ToString();
+                    objStudent.Birthday = Convert.ToDateTime(objReader["Birthday"]);
+                    objStudent.StudentIdNo = objReader["StudentIdNo"].ToString();
+                    objStudent.CardNo = objReader["CardNo"].ToString();
+                    objStudent.PhoneNumber = objReader["PhoneNumber"].ToString();
+                    objStudent.StudentAddress = objReader["StudentAddress"].ToString();
+                    objStudent.ClassId = Convert.ToInt32(objReader["ClassId"]);
+
+                }
+                objReader.Close();
+                return objStudent;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

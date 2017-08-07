@@ -54,5 +54,18 @@ namespace MVCTraining.Controllers
 
         }
 
+        public ActionResult ViewStudent()
+        {
+            string studentId = Request.QueryString["stuId"].ToString();
+            Student objStudent = new StudentManage().GetStudent(studentId);
+            ViewData["student"] = objStudent;
+
+            string className = new StudentClassManage().GetClassNameById(objStudent.ClassId.ToString());
+            ViewData["className"] = className;
+
+            return View("ViewStudent");
+
+        }
+
     }
 }

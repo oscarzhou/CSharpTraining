@@ -12,5 +12,10 @@ namespace BLL
         {
             return objStudentClassService.GetAllClasses();
         }
+
+        public string GetClassNameById(string classId)
+        {
+            return objStudentClassService.GetClassNameById(classId);
+        }
     }
 }
