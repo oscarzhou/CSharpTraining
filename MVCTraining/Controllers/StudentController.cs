@@ -56,7 +56,7 @@ namespace MVCTraining.Controllers
 
         public ActionResult ViewStudent()
         {
-            string studentId = Request.QueryString["stuId"].ToString();
+            string studentId = Request.QueryString["stuId"];
             Student objStudent = new StudentManage().GetStudent(studentId);
             ViewData["student"] = objStudent;
 
@@ -67,5 +67,34 @@ namespace MVCTraining.Controllers
 
         }
 
+        public ActionResult GetStudent()
+        {
+            List<StudentClass> objStudentClasses = new StudentClassManage().GetAllClasses();
+            ViewBag.clsList = objStudentClasses;
+
+            string studentId = Request.QueryString["stuId"];
+            Student objStudent = new StudentManage().GetStudent(studentId);
+            return View("EditStudent", objStudent);
+        }
+
+        public ActionResult EditStudent()
+        {
+            Student objStudent = new Student()
+            {
+                StudentId = Convert.ToInt32(Request.Params["studentId"]),
+                StudentName = Request.Params["studentName"],
+                Gender = Request.Params["gender"],
+                Birthday = Convert.ToDateTime(Request.Params["birthday"]),
+                StudentIdNo = Request.Params["studentIdNo"],
+                CardNo = Request.Params["cardNo"],
+                PhoneNumber = Request.Params["photoNumber"],
+                StudentAddress = Request.Params["studentAddress"],
+                ClassId = Convert.ToInt32(Request.Params["classId"])
+            };
+
+            int result = new StudentManage().EditStudent(objStudent);
+
+            return Content("<script>alert('Modify Successfully'); document.location='" + Url.Action("Index", "Student") + "'</script>");
+        }
     }
 }

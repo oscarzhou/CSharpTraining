@@ -21,5 +21,10 @@ namespace BLL
         {
             return objStudentService.GetStudent(studentId);
         }
+
+        public int EditStudent(Student objStudent)
+        {
+            return objStudentService.EditStudent(objStudent);
+        }
     }
 }

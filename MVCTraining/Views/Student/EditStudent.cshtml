@@ -1,0 +1,98 @@
+﻿@using Model
+@model Model.Student
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Styles/bootstrap.css" rel="stylesheet" />
+    <script src="~/Styles/jquery-3.1.1.min.js"></script>
+    <title>Edit Student</title>
+    <script type="text/javascript">
+        
+        $(function(){
+            $("#birthday").attr("value", @Model.Birthday.ToString("MM/dd/yyyy"));
+
+        })
+    </script>
+</head>
+<body class="col-lg-6 col-lg-push-3">
+    <form method="post" action="/Student/EditStudent">
+        @{
+            <div class="form-group">
+                    <label class="control-label" for="studentId">Id</label>
+                    <input class="form-control" readonly="readonly" type="text" id="studentId" name="studentId" value="@Model.StudentId" placeholder="Id">
+                </div>
+            <div class="form-group">
+                <label class="control-label" for="studentName">Name</label>
+                <input class="form-control" type="text" id="studentName" name="studentName" value="@Model.StudentName" placeholder="Name">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="birthday">Gender</label>
+                <div class="radio">
+                    <label class="control-label">
+                        <input type="radio" name="gender" id="optionsRadios1" value="男" checked="@Model.Gender.Equals("男")">
+                        男
+                    </label>
+                </div>
+                <div class="radio">
+                    <label class="control-label">
+                        <input type="radio" name="gender" id="optionsRadios2" value="女" checked="@Model.Gender.Equals("女")">
+                        女
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="birthday">Birthday</label>
+                <input type="date" class="form-control" id="birthday" name="birthday" value="@Model.Birthday.ToString("yy-mm-dd")" placeholder="Birthday">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="studentIdNo">Student Id No</label>
+                <input type="text" class="form-control" id="studentIdNo" name="studentIdNo" value="@Model.StudentIdNo" placeholder="Student Id No">
+            </div>
+            <div class="form-group">
+                <label class=" control-label" for="cardNo">Card No</label>
+                <input type="text" class="form-control" id="cardNo" name="cardNo" value="@Model.CardNo" placeholder="Card No">
+            </div>
+            <div class="form-group">
+                <label class=" control-label" for="photoNumber">Phone Number</label>
+                <input type="text" class="form-control" id="photoNumber" name="phoneNumber" value="@Model.PhoneNumber" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+                <label class=" control-label" for="studentAddress">Student Address</label>
+                <input type="text" class="form-control" id="studentAddress" name="studentAddress" value="@Model.StudentAddress" placeholder="Student Address">
+            </div>
+            <div class="form-group">
+                <label class=" control-label" for="classId">Class Name</label>
+                <select class="form-control" name="classId">
+                    @{
+                        if (ViewBag.clsList != null)
+                        {
+                            foreach (StudentClass objClass in ViewBag.clsList)
+                            {
+                                if (objClass.ClassId == Model.ClassId)
+                                {
+                                    <option value="@objClass.ClassId" selected>@objClass.ClassName</option>
+                                }
+                                else
+                                {
+                                    <option value="@objClass.ClassId">@objClass.ClassName</option>
+                                }
+                            }
+
+                        }
+
+                    }
+
+                </select>
+            </div>
+        }
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</body>
+</html>
