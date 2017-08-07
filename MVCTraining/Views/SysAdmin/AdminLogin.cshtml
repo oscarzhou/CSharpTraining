@@ -3,19 +3,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width"/>    
+    <meta name="viewport" content="width=device-width"/> 
+    <link href="~/Styles/bootstrap.css" rel="stylesheet" />   
+    <link href="~/Styles/AdminLogin.css" rel="stylesheet" />
     <title>Login Page</title>
 
 </head>
 <body>
-<form method="post" action="/SysAdmin/Login">
-    User Name: <input type="text" name="loginId"/><br/>
-    Password: <input type="password" name="loginPwd"/><br/>
-    <input type="submit" value="Login"/>
-</form>
+    <form method="post" action="/SysAdmin/Login">
+        <div class="form-group">
+            <label for="username">User Name</label>
+            <input type="text" class="form-control" name="loginId" id="username" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="loginPwd" id="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-default">Login</button>
+    </form>
     
-<div>
-    @ViewData["info"]
-</div>
+
+    <div>
+        @ViewData["info"]
+    </div>
 </body>
 </html>

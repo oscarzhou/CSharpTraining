@@ -1,15 +1,65 @@
-﻿
+﻿@using Model
+
 
 <!DOCTYPE html>
+
+@{
+    string adminName = ((SysAdmin) Session["CurrentAdmin"]).AdminName;
+}
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>StudentManage</title>
+    
+    <link href="~/Styles/bootstrap.css" rel="stylesheet" />
+    <link href="~/Styles/StudentManage.css" rel="stylesheet" />
+    <title>Student Management</title>
 </head>
-<body>
-    <div>
-        @ViewData["info"]
-    </div>
+<body class="col-lg-8 col-lg-push-2">
+<div>
+    <p class="bg-primary">
+        Current User: @adminName
+    </p>
+</div>
+<br/>
+<div class="query-div">
+    <form method="post" action="/Student/GetList">
+        Class Query: <input type="text" name="query" value="@ViewBag.className"/>
+        <input class="btn btn-primary" type="submit" value="Query" />
+        <a href="/Views/Student/AddStudent.cshtml"><input class="btn btn-primary" type="button" value="New Student" /></a>    
+    </form>
+</div>
+<table class="table">
+    
+       @{
+    if (ViewBag.stuList != null)
+    {
+        foreach (Student objStudent in ViewBag.stuList)
+        {
+            <tr>
+                <td>
+                    @objStudent.StudentId
+                </td>
+                <td>
+                    @objStudent.StudentName
+                </td>
+                <td>
+                    @objStudent.Gender
+                </td>
+                <td>
+                    <a href="#">Edit</a>
+                </td>
+                <td>
+                    <a href="#">View</a>
+                </td>
+                <td>
+                    <a href="#">Delete</a>
+                </td>
+            </tr>
+        }
+    }
+} 
+    
+</table>
 </body>
 </html>
