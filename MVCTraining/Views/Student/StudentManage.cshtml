@@ -27,7 +27,7 @@
     <form method="post" action="/Student/GetList">
         Class Query: <input type="text" name="query" value="@query" />
         <input class="btn btn-primary" type="submit" value="Query" />
-        <a href="/Student/NewStudent"><input class="btn btn-primary" type="button" value="New Student" /></a>    
+        <a href="@Url.Action("NewStudent","Student")"><input class="btn btn-primary" type="button" value="New Student" /></a>    
     </form>
 </div>
 <table class="table">
@@ -48,13 +48,13 @@
                     @objStudent.Gender
                 </td>
                 <td>
-                    <a href="/Student/GetStudent/?stuId=@objStudent.StudentId">Edit</a>
+                    <a href="@Url.Action("GetStudent", "Student", new {stuId=objStudent.StudentId})">Edit</a>
                 </td>
                 <td>
-                    <a href="/Student/ViewStudent/?stuId=@objStudent.StudentId">View</a>
+                    <a href="@Url.Action("ViewStudent", "Student", new {stuId=objStudent.StudentId})">View</a>
                 </td>
                 <td>
-                    <a href="/Student/DeleteStudent/?stuId=@objStudent.StudentId">Delete</a>
+                    <a href="@Url.Action("DeleteStudent","Student",new {stuId=objStudent.StudentId})">Delete</a>
                 </td>
             </tr>
         }

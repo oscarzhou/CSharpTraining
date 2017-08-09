@@ -14,6 +14,15 @@ namespace MVCTraining
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "SysAdmin", action = "Index", id = UrlParameter.Optional }
             );
+
+
+            routes.MapRoute(
+                name: "Student",
+                url: "{controller}/{action}",
+                defaults: new { controller = "StudentManage", action = "Index" }
+            );
         }
+
+
     }
 }
