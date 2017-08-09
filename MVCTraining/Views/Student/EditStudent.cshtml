@@ -15,24 +15,24 @@
         @{
             <div class="form-group">
                     <label class="control-label" for="studentId">Id</label>
-                    <input class="form-control" readonly="readonly" type="text" id="studentId" name="studentId" value="@Model.StudentId" placeholder="Id">
+                    <input class="form-control" readonly="readonly" type="text" id="studentId" name="StudentId" value="@Model.StudentId" placeholder="Id">
                 </div>
             <div class="form-group">
                 <label class="control-label" for="studentName">Name</label>
-                <input class="form-control" type="text" id="studentName" name="studentName" value="@Model.StudentName" placeholder="Name">
+                <input class="form-control" type="text" id="studentName" name="StudentName" value="@Model.StudentName" placeholder="Name">
             </div>
 
             <div class="form-group">
                 <label class="control-label" for="birthday">Gender</label>
                 <div class="radio">
                     <label class="control-label">
-                        <input type="radio" name="gender" id="optionsRadios1" value="男" checked="@Model.Gender.Equals("男")">
+                        <input type="radio" name="Gender" id="optionsRadios1" value="男" checked="@Model.Gender.Equals("男")">
                         男
                     </label>
                 </div>
                 <div class="radio">
                     <label class="control-label">
-                        <input type="radio" name="gender" id="optionsRadios2" value="女" checked="@Model.Gender.Equals("女")">
+                        <input type="radio" name="Gender" id="optionsRadios2" value="女" checked="@Model.Gender.Equals("女")">
                         女
                     </label>
                 </div>
@@ -40,28 +40,28 @@
 
             <div class="form-group">
                 <label class="control-label" for="birthday">Birthday</label>
-                <input type="date" class="form-control" id="birthday" name="birthday" value="@Model.Birthday.ToString("yyyy-MM-dd")" placeholder="Birthday">
+                <input type="date" class="form-control" id="birthday" name="Birthday" value="@Model.Birthday.ToString("yyyy-MM-dd")" placeholder="Birthday">
             </div>
 
             <div class="form-group">
                 <label class="control-label" for="studentIdNo">Student Id No</label>
-                <input type="text" class="form-control" id="studentIdNo" name="studentIdNo" value="@Model.StudentIdNo" placeholder="Student Id No">
+                <input type="text" class="form-control" id="studentIdNo" name="StudentIdNo" value="@Model.StudentIdNo" placeholder="Student Id No">
             </div>
             <div class="form-group">
                 <label class=" control-label" for="cardNo">Card No</label>
-                <input type="text" class="form-control" id="cardNo" name="cardNo" value="@Model.CardNo" placeholder="Card No">
+                <input type="text" class="form-control" id="cardNo" name="CardNo" value="@Model.CardNo" placeholder="Card No">
             </div>
             <div class="form-group">
                 <label class=" control-label" for="photoNumber">Phone Number</label>
-                <input type="text" class="form-control" id="photoNumber" name="phoneNumber" value="@Model.PhoneNumber" placeholder="Phone Number">
+                <input type="text" class="form-control" id="photoNumber" name="PhoneNumber" value="@Model.PhoneNumber" placeholder="Phone Number">
             </div>
             <div class="form-group">
                 <label class=" control-label" for="studentAddress">Student Address</label>
-                <input type="text" class="form-control" id="studentAddress" name="studentAddress" value="@Model.StudentAddress" placeholder="Student Address">
+                <input type="text" class="form-control" id="studentAddress" name="StudentAddress" value="@Model.StudentAddress" placeholder="Student Address">
             </div>
             <div class="form-group">
                 <label class=" control-label" for="classId">Class Name</label>
-                <select class="form-control" name="classId">
+                <select class="form-control" name="ClassId">
                     @{
                         if (ViewBag.clsList != null)
                         {

@@ -1,6 +1,5 @@
 ﻿using BLL;
 using Model;
-using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -21,9 +20,9 @@ namespace MVCTraining.Controllers
             return View("StudentManage");
         }
 
-        public ActionResult GetList()
+        public ActionResult GetList(string queryClass)
         {
-            string queryClass = Request.Params["query"].ToString();
+            //string queryClass = Request.Params["query"].ToString();
 
             List<Student> objStudents = new StudentManage().GetListByClassId(queryClass);
             ViewBag.className = queryClass;
@@ -39,19 +38,19 @@ namespace MVCTraining.Controllers
             return View("AddStudent");
         }
 
-        public ActionResult AddStudent()
+        public ActionResult AddStudent(Student objStudent)
         {
-            Student objStudent = new Student()
-            {
-                StudentName = Request.Params["studentName"],
-                Gender = Request.Params["gender"],
-                Birthday = Convert.ToDateTime( Request.Params["birthday"]),
-                StudentIdNo = Request.Params["studentIdNo"],
-                CardNo = Request.Params["cardNo"],
-                PhoneNumber = Request.Params["phoneNumber"],
-                StudentAddress = Request.Params["studentAddress"],
-                ClassId = Convert.ToInt32(Request.Params["ClassId"]) 
-            };
+            //Student objStudent = new Student()
+            //{
+            //    StudentName = Request.Params["studentName"],
+            //    Gender = Request.Params["gender"],
+            //    Birthday = Convert.ToDateTime( Request.Params["birthday"]),
+            //    StudentIdNo = Request.Params["studentIdNo"],
+            //    CardNo = Request.Params["cardNo"],
+            //    PhoneNumber = Request.Params["phoneNumber"],
+            //    StudentAddress = Request.Params["studentAddress"],
+            //    ClassId = Convert.ToInt32(Request.Params["ClassId"]) 
+            //};
 
             int result = new StudentManage().InsertStudent(objStudent);
 
@@ -59,10 +58,10 @@ namespace MVCTraining.Controllers
 
         }
 
-        public ActionResult ViewStudent()
+        public ActionResult ViewStudent(string stuId)
         {
-            string studentId = Request.QueryString["stuId"];
-            Student objStudent = new StudentManage().GetStudent(studentId);
+            //string studentId = Request.QueryString["stuId"];
+            Student objStudent = new StudentManage().GetStudent(stuId);
             ViewData["student"] = objStudent;
 
             string className = new StudentClassManage().GetClassNameById(objStudent.ClassId.ToString());
@@ -72,40 +71,40 @@ namespace MVCTraining.Controllers
 
         }
 
-        public ActionResult GetStudent()
+        public ActionResult GetStudent(string stuId)
         {
             List<StudentClass> objStudentClasses = new StudentClassManage().GetAllClasses();
             ViewBag.clsList = objStudentClasses;
 
-            string studentId = Request.QueryString["stuId"];
-            Student objStudent = new StudentManage().GetStudent(studentId);
+            //string studentId = Request.QueryString["stuId"];
+            Student objStudent = new StudentManage().GetStudent(stuId);
             return View("EditStudent", objStudent);
         }
 
-        public ActionResult EditStudent()
+        public ActionResult EditStudent(Student objStudent)
         {
-            Student objStudent = new Student()
-            {
-                StudentId = Convert.ToInt32(Request.Params["studentId"]),
-                StudentName = Request.Params["studentName"],
-                Gender = Request.Params["gender"],
-                Birthday = Convert.ToDateTime(Request.Params["birthday"]),
-                StudentIdNo = Request.Params["studentIdNo"],
-                CardNo = Request.Params["cardNo"],
-                PhoneNumber = Request.Params["phoneNumber"],
-                StudentAddress = Request.Params["studentAddress"],
-                ClassId = Convert.ToInt32(Request.Params["classId"])
-            };
+            //Student objStudent = new Student()
+            //{
+            //    StudentId = Convert.ToInt32(Request.Params["studentId"]),
+            //    StudentName = Request.Params["studentName"],
+            //    Gender = Request.Params["gender"],
+            //    Birthday = Convert.ToDateTime(Request.Params["birthday"]),
+            //    StudentIdNo = Request.Params["studentIdNo"],
+            //    CardNo = Request.Params["cardNo"],
+            //    PhoneNumber = Request.Params["phoneNumber"],
+            //    StudentAddress = Request.Params["studentAddress"],
+            //    ClassId = Convert.ToInt32(Request.Params["classId"])
+            //};
 
             int result = new StudentManage().EditStudent(objStudent);
 
             return Content("<script>alert('Modify Successfully'); document.location='" + Url.Action("Index", "Student") + "'</script>");
         }
 
-        public ActionResult DeleteStudent()
+        public ActionResult DeleteStudent(string stuId)
         {
-            string studentId = Request.QueryString["stuId"];
-            int result = new StudentManage().DeleteStudent(studentId);
+            //string studentId = Request.QueryString["stuId"];
+            int result = new StudentManage().DeleteStudent(stuId);
 
             return Content("<script>alert('Delete Successfully'); document.location='" + Url.Action("Index", "Student") + "'</script>");
         }

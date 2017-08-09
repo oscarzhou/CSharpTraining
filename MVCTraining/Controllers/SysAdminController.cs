@@ -15,13 +15,13 @@ namespace MVCTraining.Controllers
             return View("AdminLogin");
         }
 
-        public ActionResult Login()
+        public ActionResult Login(string loginId, string loginPwd)
         {
             // 获取用户输入数据
             SysAdmin objSysAdmin = new SysAdmin()
             {
-                LoginId = Convert.ToInt32(Request.Params["loginId"]),
-                LoginPwd = Request.Params["loginPwd"]
+                LoginId = Convert.ToInt32(loginId),
+                LoginPwd = loginPwd
             };
             //调用业务逻辑
             objSysAdmin = new SysAdminManage().Login(objSysAdmin);
