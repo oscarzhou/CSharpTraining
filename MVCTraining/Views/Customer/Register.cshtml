@@ -13,56 +13,66 @@
     <title>Register</title>
 </head>
 <body class="col-lg-6 col-lg-push-3">
-    <form method="post" action="/Customer/Register">
-        <div class="form-group">
-            <label class="control-label" for="LoginId">Login Id</label>
-            <input class="form-control" type="text" id="LoginId" name="LoginId" value="@(Model!=null?Model.LoginId:"")" placeholder="User Name">
-            @Html.ValidationMessage("LoginId", new { @class = "error" }) @Html.ValidationMessage("doubleUser", new { @class = "error" })
-        </div>
-        <div class="form-group">
-            <label class="control-label" for="Password">Password</label>
-            <input class="form-control" type="password" id="Password" name="LoginPwd" value="@(Model != null ? Model.LoginPwd : "")" placeholder="Password">
-            @Html.ValidationMessage("LoginPwd", new { @class = "error" })
-        </div>
-        <div class="form-group">
-            <label class="control-label" for="PasswordConfirm">Password Confirm</label>
-            <input class="form-control" type="password" id="PasswordConfirm" name="PasswordConfirm" value="@(Model != null ? Model.PasswordConfirm : "")" placeholder="Password Confirm">
-            @Html.ValidationMessage("PasswordConfirm", new { @class = "error" })
-        </div>
-        <div class="form-group">
-            <label class="control-label" for="Name">Name</label>
-            <input class="form-control" type="text" id="Name" name="Name" value="@(Model != null ? Model.Name : "")" placeholder="Name">
-            @Html.ValidationMessage("Name", new { @class = "error" })
-        </div>
-        <div class="form-group">
-            <label class="control-label" for="Age">Age</label>
-            <input class="form-control" type="text" id="Age" name="Age" value="@(Model != null ? Model.Age : null)" placeholder="Age">
-            @Html.ValidationMessage("Age", new { @class = "error" })
-        </div>
-        <div class="form-group">
-            <label class="control-label" for="Address">Address</label>
-            <input class="form-control" type="text" id="Address" name="Address" value="@(Model != null ? Model.Address : "")" placeholder="Address">
-            @Html.ValidationMessage("Address", new { @class = "error" })
-        </div>
-        <div class="form-group">
-            <label class="control-label" for="Phone">Phone</label>
-            <input class="form-control" type="text" id="Phone" name="Phone" value="@(Model!=null?Model.Phone:"")" placeholder="Phone">
-            @Html.ValidationMessage("Phone", new { @class = "error" })
-        </div>
-        <div class="form-group">
-            <label class="control-label" for="Email">Email</label>
-            <input class="form-control" type="text" id="Email" name="Email" value="@(Model!=null?Model.Email:"")" placeholder="Email">
-            @Html.ValidationMessage("Email", new { @class = "error" })
-        </div>
+    @using (Html.BeginForm("Register", "Customer"))
+    {
+    <div class="form-group">
+        <label class="control-label" for="LoginId">Login Id</label>
+        @*<input class="form-control" type="text" id="LoginId" name="LoginId" value="@(Model != null ? Model.LoginId : "")" placeholder="User Name">*@
+        @Html.TextBox("LoginId")
+        @Html.ValidationMessage("LoginId", new {@class = "error"}) @Html.ValidationMessage("doubleUser", new {@class = "error"})
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="Password">Password</label>
+        @*<input class="form-control" type="password" id="Password" name="LoginPwd" value="@(Model != null ? Model.LoginPwd : "")" placeholder="Password">*@
+        @Html.Password("LoginPwd")
+        @Html.ValidationMessage("LoginPwd", new {@class = "error"})
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="PasswordConfirm">Password Confirm</label>
+        @*<input class="form-control" type="password" id="PasswordConfirm" name="PasswordConfirm" value="@(Model != null ? Model.PasswordConfirm : "")" placeholder="Password Confirm">*@
+        @Html.Password("PasswordConfirm")
+        @Html.ValidationMessage("PasswordConfirm", new {@class = "error"})
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="Name">Name</label>
+        @*<input class="form-control" type="text" id="Name" name="Name" value="@(Model != null ? Model.Name : "")" placeholder="Name">*@
+        @Html.TextBox("Name")
+        @Html.ValidationMessage("Name", new {@class = "error"})
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="Age">Age</label>
+        @*<input class="form-control" type="text" id="Age" name="Age" value="@(Model != null ? Model.Age : null)" placeholder="Age">*@
+        @Html.TextBox("Age")
+        @Html.ValidationMessage("Age", new {@class = "error"})
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="Address">Address</label>
+        @*<input class="form-control" type="text" id="Address" name="Address" value="@(Model != null ? Model.Address : "")" placeholder="Address">*@
+        @Html.TextBox("Address")
+        @Html.ValidationMessage("Address", new {@class = "error"})
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="Phone">Phone</label>
+        @*<input class="form-control" type="text" id="Phone" name="Phone" value="@(Model != null ? Model.Phone : "")" placeholder="Phone">*@
+        @Html.TextBox("Phone")
+        @Html.ValidationMessage("Phone", new {@class = "error"})
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="Email">Email</label>
+        @*<input class="form-control" type="text" id="Email" name="Email" value="@(Model != null ? Model.Email : "")" placeholder="Email">*@
+        @Html.TextBox("Email")
+        @Html.ValidationMessage("Email", new {@class = "error"})
+    </div>
 
 
 
 
-        <div class="btn-area">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
+    <div class="btn-area">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
 
-    </form>
+    }
+
 </body>
 
 </html>
