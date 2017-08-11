@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerManage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentClassManage.cs" />
     <Compile Include="StudentManage.cs" />
