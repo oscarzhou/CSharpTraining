@@ -15,10 +15,17 @@ namespace MVCTraining.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(Customer objCustomer)
+        public ActionResult Register(Customer objCustomer, string validateCode)
         {
             if (ModelState.IsValid)
             {
+                if (string.Compare(TempData["ValidateCode"].ToString(), validateCode, true) != 0)
+                {
+                    ModelState.AddModelError("ValidateCode", "验证码不正确，请重新输入");
+                    return View("Register");
+                }
+
+
                 CustomerManage objCustomerManage = new CustomerManage();
                 if (!objCustomerManage.Register(objCustomer))
                 {
@@ -37,6 +44,15 @@ namespace MVCTraining.Controllers
                 return View("Register", objCustomer);    
             }
             
+        }
+
+
+        public ActionResult ValidateCode()
+        {
+            CreateValidateCode objCreateCode = new CreateValidateCode();
+            string code = objCreateCode.CreateRandomCode(5);
+            TempData["ValidateCode"] = code;
+            return File(objCreateCode.CreateValidateGraphic(code), "image/Jpeg");
         }
     }
 }
