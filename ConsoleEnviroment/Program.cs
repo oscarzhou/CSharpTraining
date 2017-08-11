@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 
 namespace ConsoleEnviroment
 {
@@ -42,33 +43,75 @@ namespace ConsoleEnviroment
 
 
 
+        //static void Main(string[] args)
+        //{
+        //    dynamic person1 = new Student {StudentId = 10001, StudentName = "John"};
+        //    person1.GetInfo();
+
+        //    dynamic person2 = new Teacher {TeacherId = 20000, TeacherName = "Katy"};
+        //    person2.GetInfo();
+        //}
+
+
+        //class Student
+        //{
+        //    public int StudentId { get; set; }
+
+        //    public string StudentName { get; set; }
+
+        //    public void GetInfo()
+        //    {
+        //        Console.WriteLine("Name:{0} Student No:{1} ");
+        //    }
+        //}
+
+        //class Teacher
+        //{
+        //    public int TeacherId { get; set; }
+
+        //    public string TeacherName { get; set; }
+
+        //}
+
+
+
         static void Main(string[] args)
         {
-            dynamic person1 = new Student {StudentId = 10001, StudentName = "John"};
-            person1.GetInfo();
+            Random rd = new Random();
+            int next = rd.Next()%5999;
 
-            dynamic person2 = new Teacher {TeacherId = 20000, TeacherName = "Katy"};
-            person2.GetInfo();
-        }
+            string x = next.ToString("0000");
+            string y = Console.ReadLine();
 
+            char[] pindigits = x.ToCharArray();
 
-        class Student
-        {
-            public int StudentId { get; set; }
+            char[] guessdigits = y.ToCharArray();
 
-            public string StudentName { get; set; }
+            bool[] pos = new bool[4];
 
-            public void GetInfo()
+            int rightcounter = 0, wrongcounter = 0;
+            for (int i = 0; i < 4; i++)
             {
-                Console.WriteLine("Name:{0} Student No:{1} ");
+                if (pindigits[i] == guessdigits[i])
+                {
+                    pos[i] = true;
+                    rightcounter++;
+
+                }
+                else
+                {
+                    pos[i] = false;
+                    wrongcounter++;
+                }
+
+
             }
-        }
+            Console.WriteLine("The number of correct digits is {0} and the number of incorrect place is {1}", rightcounter, wrongcounter);
+            Console.WriteLine("x is "+x.ToString());
+            Console.WriteLine("y is "+ y.ToString());
 
-        class Teacher
-        {
-            public int TeacherId { get; set; }
+            Console.ReadKey();
 
-            public string TeacherName { get; set; }
 
         }
 
