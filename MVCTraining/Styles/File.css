@@ -1,8 +1,17 @@
-﻿body {
+﻿
+body {
+    width: 90%;
+    margin: 0 auto;
     margin-bottom: 100px;
 }
 
-
-div.btn-area {
+.btn-area {
     text-align: right;
+    margin-top: 100px;
+}
+
+
+
+input {
+    margin-bottom: 10px;
 }

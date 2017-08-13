@@ -5,7 +5,7 @@ namespace ConsoleEnviroment.PowerShopTest
 {
     class RemovingBoxes
     {
-        static void Main(string[] args)
+        static void main(string[] args)
         {
             //Initialize the variables
             int counter = 41;

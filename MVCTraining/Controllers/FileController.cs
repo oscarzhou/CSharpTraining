@@ -1,4 +1,7 @@
-﻿using System.Web;
+﻿using BLL;
+using Model;
+using System.Collections.Generic;
+using System.Web;
 using System.Web.Mvc;
 
 namespace MVCTraining.Controllers
@@ -28,5 +31,17 @@ namespace MVCTraining.Controllers
             return View("Index");
         }
 
+        public ActionResult AddStaticNews()
+        {
+            return View("AddStaticNews");
+        }
+
+        public ActionResult AddDynamicNews()
+        {
+            List<NewsCategory> objCategories = new NewsManage().GetNewsCategory();
+            SelectList list = new SelectList(objCategories, "CategoryId", "CategoryName", objCategories[0].CategoryId);
+            ViewBag.Category = list;
+            return View("AddDynamicNews");
+        }
     }
 }

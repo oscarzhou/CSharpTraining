@@ -1,0 +1,65 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Styles/bootstrap.css" rel="stylesheet" />
+    <link href="~/Styles/File.css" rel="stylesheet" />
+    <title>Add News</title>
+</head>
+<body class="col-lg-6 col-lg-push-3">
+    @using (Html.BeginForm("AddStaticNews", "File", FormMethod.Post))
+    {
+        var items=new List<SelectListItem>();
+        items.Add(new SelectListItem(){ Text = "Education", Value = "1"});
+        items.Add(new SelectListItem(){ Text = "Media", Value = "2"});
+        items.Add(new SelectListItem(){ Text = "Vehicle", Value = "3"});
+        items.Add(new SelectListItem(){ Text = "Military", Value = "4"});
+        <table class="table">
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label class="control-label" for="title">Title</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        @Html.TextBox("NewsTitle", null, new {@class="form-control", placeholder="Title"})
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label class="control-label" for="category">Category</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        @Html.DropDownList("NewsCategory", items, "Please Select", new {@class="form-control"})
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label class="control-label" for="detail">Detail</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        @Html.TextArea("NewsContent", null, new { @class = "form-control", placeholder = "News Title" })
+                    </div>
+                </td>
+            </tr>
+        </table>   
+    <div class="btn-area">
+        <button type="submit" class="btn btn-primary">Post News</button>
+        <a href="@Url.Action("Index", "File")"><input type="button" class="btn btn-primary" value="Back" /></a>    
+    </div>
+    }
+    
+
+</body>
+</html>

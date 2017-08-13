@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="CreateValidateCode.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="News.cs" />
+    <Compile Include="NewsCategory.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="StudentClass.cs" />
     <Compile Include="SysAdmin.cs" />
