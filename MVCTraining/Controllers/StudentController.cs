@@ -12,13 +12,26 @@ namespace MVCTraining.Controllers
 
         public ActionResult Index()
         {
-            if (System.Web.HttpContext.Current.Session["query"] != null)
+            if (this.User.Identity.IsAuthenticated)
             {
-                List<Student> objStudents = new StudentManage().GetListByClassId(System.Web.HttpContext.Current.Session["query"].ToString());
-                ViewBag.stuList = objStudents;
+                string adminName = this.User.Identity.Name;
+
+                ViewBag.adminName = adminName;
+                return View("StudentManage");
             }
-            return View("StudentManage");
+            else
+            {
+                return RedirectToAction("Index", "SysAdmin");
+            }
+
+            //if (System.Web.HttpContext.Current.Session["query"] != null)
+            //{
+            //    List<Student> objStudents = new StudentManage().GetListByClassId(System.Web.HttpContext.Current.Session["query"].ToString());
+            //    ViewBag.stuList = objStudents;
+            //    return View("StudentManage");
+            //}
         }
+
 
         public ActionResult GetList(string queryClass)
         {

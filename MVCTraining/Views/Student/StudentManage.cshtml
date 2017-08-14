@@ -19,7 +19,8 @@
 <body class="col-lg-8 col-lg-push-2">
 <div>
     <p class="bg-primary">
-        Current User: @adminName
+        Current User: @adminName , @ViewBag.adminName
+        <a href="@Url.Action("adminExit", "SysAdmin")">Log out</a>
     </p>
 </div>
 <br/>
@@ -27,7 +28,7 @@
     <form method="post" action="/Student/GetList">
         Class Query: <input type="text" name="queryClass" value="@query" />
         <input class="btn btn-primary" type="submit" value="Query" />
-        <a href="@Url.Action("NewStudent","Student")"><input class="btn btn-primary" type="button" value="New Student" /></a>    
+        <a href="@Url.Action("NewStudent","Student")"><input class="btn btn-primary" type="button" value="New Student" /></a>
     </form>
 </div>
 <table class="table">

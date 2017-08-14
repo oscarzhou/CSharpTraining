@@ -29,7 +29,7 @@ namespace DAL
         public SysAdmin Login(SysAdmin objSysAdmin)
         {
             StringBuilder sqlBuilder = new StringBuilder();
-            sqlBuilder.Append("select * from [dbo].[Admins] where LoginId={0} and LoginPwd={1}");
+            sqlBuilder.Append("select * from [dbo].[Admins] where LoginId={0} and LoginPwd='{1}'");
             string sql = string.Format(sqlBuilder.ToString(), objSysAdmin.LoginId, objSysAdmin.LoginPwd);
 
             try
