@@ -43,5 +43,14 @@ namespace MVCTraining.Controllers
             ViewBag.Category = list;
             return View("AddDynamicNews");
         }
+
+        [ValidateInput(false)]
+        [HttpPost]
+        public ActionResult PostNews(News objNews)
+        {
+            // Save the instance News to database
+
+            return View("AddDynamicNews");
+        }
     }
 }
