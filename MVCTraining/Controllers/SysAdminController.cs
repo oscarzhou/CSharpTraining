@@ -1,6 +1,5 @@
 ﻿using BLL;
 using Model;
-using System;
 using System.Web.Mvc;
 
 namespace MVCTraining.Controllers
@@ -15,14 +14,15 @@ namespace MVCTraining.Controllers
             return View("AdminLogin");
         }
 
-        public ActionResult Login(string loginId, string loginPwd)
+        [HttpPost]
+        public ActionResult Login(SysAdmin objSysAdmin)
         {
             // 获取用户输入数据
-            SysAdmin objSysAdmin = new SysAdmin()
-            {
-                LoginId = Convert.ToInt32(loginId),
-                LoginPwd = loginPwd
-            };
+            //SysAdmin objSysAdmin = new SysAdmin()
+            //{
+            //    LoginId = Convert.ToInt32(loginId),
+            //    LoginPwd = loginPwd
+            //};
             //调用业务逻辑
             objSysAdmin = new SysAdminManage().Login(objSysAdmin);
 
