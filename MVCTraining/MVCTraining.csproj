@@ -121,8 +121,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="ErrorPage.html" />
+    <Content Include="FileNotFound.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="ServerError.html" />
     <Content Include="Styles\AddStudent.css" />
     <Content Include="Styles\AdminLogin.css" />
     <Content Include="Styles\bootstrap.css" />
@@ -439,7 +442,9 @@
     <Content Include="ThirdFiles\ckeditor\skins\moono-lisa\images\refresh.png" />
     <Content Include="ThirdFiles\ckeditor\skins\moono-lisa\images\spinner.gif" />
     <Content Include="ThirdFiles\ckeditor\styles.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -517,6 +522,9 @@
     <Content Include="ThirdFiles\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
     <Content Include="ThirdFiles\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="ThirdFiles\ckeditor\skins\moono-lisa\readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Error.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

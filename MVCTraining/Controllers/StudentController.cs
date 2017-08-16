@@ -32,7 +32,7 @@ namespace MVCTraining.Controllers
             //}
         }
 
-
+        [HandleError(ExceptionType = typeof(System.Exception), View = "Error")]
         public ActionResult GetList(string queryClass)
         {
             //string queryClass = Request.Params["query"].ToString();
