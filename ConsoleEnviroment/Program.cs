@@ -148,22 +148,55 @@ namespace ConsoleEnviroment
 
         static void Main(string[] args)
         {
-            Car carry = new Car();
-            carry.printVariables();
 
-            Convert.ToDouble(Console.ReadLine());
+            Car birthdayPresent = new Car(500, 5000.546, true);
+            Console.WriteLine("Birthday Car v1");
+            birthdayPresent.printVariables();
+            birthdayPresent.getIn();
+            birthdayPresent.getIn();
+            birthdayPresent.getIn();
+            Console.WriteLine("Miles Left:" + birthdayPresent.howManyMilesTillOutOfGas());
+            Console.WriteLine("Max Miles:" + birthdayPresent.maxMilesPerFillUp());
 
-            Car familyCar = new Car();
-            Console.WriteLine("Family's Car:");
-            familyCar.printVariables();
+            Console.WriteLine("Birthday Car v2");
+            birthdayPresent.printVariables();
+            birthdayPresent.getOut();
 
-            Car aliceCar = familyCar;
-            familyCar.wreckCar();
-            Console.WriteLine("Alice's Car:");
-            aliceCar.printVariables();
+            Console.WriteLine("Birthday Car v3");
+            birthdayPresent.printVariables();
 
-            familyCar.upgradeMinSpeed();
-            familyCar.printVariables();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //Car carry = new Car();
+            //carry.printVariables();
+
+            //Convert.ToDouble(Console.ReadLine());
+
+            //Car familyCar = new Car();
+            //Console.WriteLine("Family's Car:");
+            //familyCar.printVariables();
+
+            //Car aliceCar = familyCar;
+            //familyCar.wreckCar();
+            //Console.WriteLine("Alice's Car:");
+            //aliceCar.printVariables();
+
+            //familyCar.upgradeMinSpeed();
+            //familyCar.printVariables();
 
 
             Console.ReadKey();
