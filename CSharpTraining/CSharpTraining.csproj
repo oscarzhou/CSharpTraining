@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Car.cs" />
     <Compile Include="DelegateCounter\FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>

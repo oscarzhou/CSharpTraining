@@ -1,4 +1,7 @@
 ﻿
+
+
+using CSharpTraining;
 using System;
 
 namespace ConsoleEnviroment
@@ -75,45 +78,105 @@ namespace ConsoleEnviroment
 
 
 
+        //static void Main(string[] args)
+        //{
+        //    Random rd = new Random();
+        //    int next = rd.Next()%5999;
+
+        //    string x = next.ToString("0000");
+        //    string y = Console.ReadLine();
+
+        //    char[] pindigits = x.ToCharArray();
+
+        //    char[] guessdigits = y.ToCharArray();
+
+        //    bool[] pos = new bool[4];
+
+        //    int rightcounter = 0, wrongcounter = 0;
+        //    for (int i = 0; i < 4; i++)
+        //    {
+        //        if (pindigits[i] == guessdigits[i])
+        //        {
+        //            pos[i] = true;
+        //            rightcounter++;
+
+        //        }
+        //        else
+        //        {
+        //            pos[i] = false;
+        //            wrongcounter++;
+        //        }
+
+
+        //    }
+        //    Console.WriteLine("The number of correct digits is {0} and the number of incorrect place is {1}", rightcounter, wrongcounter);
+        //    Console.WriteLine("x is "+x.ToString());
+        //    Console.WriteLine("y is "+ y.ToString());
+
+        //    Console.ReadKey();
+
+
+        //}
+        public static int Solution(int N)
+        {
+            char[] binary = Convert.ToString(N, 2).ToCharArray();
+            bool flg = false;
+            int maxCounter = 0;
+            int crtCounter = 0;
+            foreach (char crtChar in binary)
+            {
+                if (crtChar == '1')
+                {
+                    flg = true;
+                    if (crtCounter > maxCounter)
+                    {
+                        maxCounter = crtCounter;
+                        
+                    }
+                    crtCounter = 0;
+                    continue;
+                }
+                
+                if(crtChar == '0' && flg)
+                {
+                    crtCounter++;
+                }
+            }
+
+            return maxCounter;
+        }
+
         static void Main(string[] args)
         {
-            Random rd = new Random();
-            int next = rd.Next()%5999;
+            Car carry = new Car();
+            carry.printVariables();
 
-            string x = next.ToString("0000");
-            string y = Console.ReadLine();
+            Convert.ToDouble(Console.ReadLine());
 
-            char[] pindigits = x.ToCharArray();
+            Car familyCar = new Car();
+            Console.WriteLine("Family's Car:");
+            familyCar.printVariables();
 
-            char[] guessdigits = y.ToCharArray();
+            Car aliceCar = familyCar;
+            familyCar.wreckCar();
+            Console.WriteLine("Alice's Car:");
+            aliceCar.printVariables();
 
-            bool[] pos = new bool[4];
+            familyCar.upgradeMinSpeed();
+            familyCar.printVariables();
 
-            int rightcounter = 0, wrongcounter = 0;
-            for (int i = 0; i < 4; i++)
-            {
-                if (pindigits[i] == guessdigits[i])
-                {
-                    pos[i] = true;
-                    rightcounter++;
-
-                }
-                else
-                {
-                    pos[i] = false;
-                    wrongcounter++;
-                }
-
-
-            }
-            Console.WriteLine("The number of correct digits is {0} and the number of incorrect place is {1}", rightcounter, wrongcounter);
-            Console.WriteLine("x is "+x.ToString());
-            Console.WriteLine("y is "+ y.ToString());
 
             Console.ReadKey();
 
-
+            //int N = 1376796946;
+            //int a = Solution(N);
+            //Console.WriteLine(a);
+            //Console.ReadKey();
         }
+
+       
+
+
 
     }
 }

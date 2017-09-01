@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Car.cs" />
     <Compile Include="OptionalParameter\OptionalParameter.cs" />
     <Compile Include="PowerShopTest\RemovingBoxes.cs" />
     <Compile Include="Program.cs" />
