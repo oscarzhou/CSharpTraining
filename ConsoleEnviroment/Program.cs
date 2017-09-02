@@ -3,6 +3,7 @@
 
 using CSharpTraining;
 using System;
+using System.Collections.Generic;
 
 namespace ConsoleEnviroment
 {
@@ -146,24 +147,134 @@ namespace ConsoleEnviroment
             return maxCounter;
         }
 
+        public static int factorial(int n)
+        {
+            if (n>1)
+            {
+                return n * factorial(n - 1);
+            }
+            else
+            {
+                return 1;
+            }
+        }
+
         static void Main(string[] args)
         {
+            String title = Console.ReadLine();
+            String author = Console.ReadLine();
+            int price = Int32.Parse(Console.ReadLine());
+            Book new_novel = new MyBook(title, author, price);
+            new_novel.display();
 
-            Car birthdayPresent = new Car(500, 5000.546, true);
-            Console.WriteLine("Birthday Car v1");
-            birthdayPresent.printVariables();
-            birthdayPresent.getIn();
-            birthdayPresent.getIn();
-            birthdayPresent.getIn();
-            Console.WriteLine("Miles Left:" + birthdayPresent.howManyMilesTillOutOfGas());
-            Console.WriteLine("Max Miles:" + birthdayPresent.maxMilesPerFillUp());
 
-            Console.WriteLine("Birthday Car v2");
-            birthdayPresent.printVariables();
-            birthdayPresent.getOut();
+            //int[][] arr = new int[6][];
+            //for (int arr_i = 0; arr_i < 6; arr_i++)
+            //{
+            //    string[] arr_temp = Console.ReadLine().Split(' ');
+            //    arr[arr_i] = Array.ConvertAll(arr_temp, Int32.Parse);
+            //}
+            //int maxSum = 0;
+            //int currentSum = 0;
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    for (int j = 0; j < 4; j++)
+            //    {
+            //        currentSum = arr[i][j] + arr[i][j + 1] + arr[i][j + 2] +
+            //            arr[i + 1][j + 1] +
+            //            arr[i + 2][j] + arr[i + 2][j + 1] + arr[i + 2][j + 2];
+            //        if (currentSum > maxSum)
+            //        {
+            //            maxSum = currentSum;
+            //        }
+            //    }
 
-            Console.WriteLine("Birthday Car v3");
-            birthdayPresent.printVariables();
+            //}
+
+            //Console.WriteLine(maxSum);
+
+
+
+
+            //int recursiveValue = Convert.ToInt32(Console.ReadLine());
+            //int result = factorial(recursiveValue);
+            //Console.WriteLine(result);
+
+
+            //int decimalValue = Convert.ToInt32(Console.ReadLine());
+            //int maxCount = 0, consecutiveCount = 0;
+            //int remainder = 0;
+            //while (true)
+            //{
+            //    remainder = decimalValue % 2;
+            //    decimalValue = decimalValue / 2;
+            //    if (remainder == 1)
+            //    {
+            //        consecutiveCount++;
+            //        if (consecutiveCount>maxCount)
+            //        {
+            //            maxCount = consecutiveCount;
+            //        }
+                    
+            //    }
+            //    else
+            //    {
+            //        consecutiveCount = 0;
+            //    }
+            //    if (decimalValue == 0)
+            //    {
+            //        break;
+            //    }
+
+            //}
+
+            //Console.WriteLine(maxCount);
+
+
+
+
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //Dictionary<string, string> phoneBook = new Dictionary<string, string>();
+            //for (int i = 0; i < n; i++)
+            //{
+            //    string[] s= Console.ReadLine().Split(' ');
+            //    string name = s[0];
+            //    string phoneNumber = s[1];
+            //    phoneBook.Add(name, phoneNumber);
+
+            //}
+
+            //while (true)
+            //{
+            //    string nameToLookUp = Console.ReadLine();
+            //    if (phoneBook.ContainsKey(nameToLookUp))
+            //    {
+            //        string phoneNumber = phoneBook[nameToLookUp];
+            //        Console.WriteLine("{0}={1}", nameToLookUp, phoneNumber);
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Not found");
+            //    }
+            //}
+
+
+
+            //Car birthdayPresent = new Car(500, 5000.546, true);
+            //Console.WriteLine("Birthday Car v1");
+            //birthdayPresent.printVariables();
+            //birthdayPresent.getIn();
+            //birthdayPresent.getIn();
+            //birthdayPresent.getIn();
+            //Console.WriteLine("Miles Left:" + birthdayPresent.howManyMilesTillOutOfGas());
+            //Console.WriteLine("Max Miles:" + birthdayPresent.maxMilesPerFillUp());
+
+            //Console.WriteLine("Birthday Car v2");
+            //birthdayPresent.printVariables();
+            //birthdayPresent.getOut();
+
+            //Console.WriteLine("Birthday Car v3");
+            //birthdayPresent.printVariables();
 
 
 
