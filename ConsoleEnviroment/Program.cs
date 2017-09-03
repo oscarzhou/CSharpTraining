@@ -1,7 +1,6 @@
 ﻿
 
 
-using CSharpTraining;
 using System;
 using System.Collections.Generic;
 
@@ -118,8 +117,38 @@ namespace ConsoleEnviroment
 
 
         //}
+       static int compare(int a, int b)
+        {
+            return b.CompareTo(a);
+        }
+
+        public static void checkdata(string s)
+        {
+            string[] a_temp = s.Split(',');
+            int[] a = Array.ConvertAll(a_temp, Int32.Parse);
+            List<int> lst = new List<int>();
+            foreach (int i in a)
+            {
+                if (!lst.Contains(i))
+                {
+                    lst.Add(i);
+                    
+                }
+
+            }
+
+            lst.Sort(compare);
+            foreach (int i in lst)
+            {
+                Console.Write(i + ",");
+            }
+        }
+
         public static int Solution(int N)
         {
+            
+
+
             char[] binary = Convert.ToString(N, 2).ToCharArray();
             bool flg = false;
             int maxCounter = 0;
@@ -161,6 +190,28 @@ namespace ConsoleEnviroment
 
         static void Main(string[] args)
         {
+
+
+
+            int i = 1;
+            while (true)
+            {
+                int crtNum = i * i;
+                if (crtNum <= 1000 && crtNum>=100) 
+                {
+                    Console.Write(crtNum + ",");
+                }
+                else if (crtNum>1000)
+                {
+                    break;
+                }
+                i++;
+            }
+
+
+            //checkdata("1,3,2,1,4,5,7,6,9,5,6,7");
+
+
             String title = Console.ReadLine();
             String author = Console.ReadLine();
             int price = Int32.Parse(Console.ReadLine());
