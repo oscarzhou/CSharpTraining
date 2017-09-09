@@ -187,36 +187,144 @@ namespace ConsoleEnviroment
                 return 1;
             }
         }
+        static int birthdayCakeCandles(int n, int[] ar)
+        {
+            // Complete this function
+            int max = 0;
+            int count = 0;
+            foreach (int k in ar)
+            {
+                if (k == max)
+                    count++;
+                else if (k > max)
+                {
+                    max = k;
+                    count = 1;
+                }
+
+            }
+            return count;
+        }
+
+        static string timeConversion(string s) {
+            // Complete this function
+            string s_time = null;
+
+            if (s.EndsWith("PM"))
+            {
+                s = s.Remove(s.Length - 2, 2);
+                string[] s_temp = s.Split(':');
+                int[] time = Array.ConvertAll(s_temp, Int32.Parse);
+                if (time[0] > 12)
+                    time[0] = time[0] - 12;
+                else if (time[0] < 12)
+                    time[0] = time[0] + 12;
+
+                s_temp[0] = time[0].ToString("00");
+                if (time[0] == 24)
+                {
+                    s_temp[0] = "00";
+                }
+                s_time = string.Format("{0}:{1}:{2}", s_temp[0], s_temp[1], s_temp[2]);
+            }
+            else if (s.EndsWith("AM"))
+            {
+                s = s.Remove(s.Length - 2, 2);
+                string[] s_temp = s.Split(':');
+
+                int[] time = Array.ConvertAll(s_temp, Int32.Parse);
+                if (time[0] == 12)
+                {
+                    s_temp[0] = "00";
+                }
+                s_time = string.Format("{0}:{1}:{2}", s_temp[0], s_temp[1], s_temp[2]);
+            }
+            return s_time;
+        }
 
         static void Main(string[] args)
         {
+            string s = Console.ReadLine();
+            string result = timeConversion(s);
+            Console.WriteLine(result);
 
 
 
-            int i = 1;
-            while (true)
-            {
-                int crtNum = i * i;
-                if (crtNum <= 1000 && crtNum>=100) 
-                {
-                    Console.Write(crtNum + ",");
-                }
-                else if (crtNum>1000)
-                {
-                    break;
-                }
-                i++;
-            }
+
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //string[] ar_temp = Console.ReadLine().Split(' ');
+            //int[] ar = Array.ConvertAll(ar_temp, Int32.Parse);
+            //int result = birthdayCakeCandles(n, ar);
+            //Console.WriteLine(result);
+
+
+            //string[] arr_temp = Console.ReadLine().Split(' ');
+            //int[] arr = Array.ConvertAll(arr_temp, Int32.Parse);
+            //List<long> list = new List<long>();
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    long sum = 0;
+            //    for (int j = 0; j < arr.Length; j++)
+            //    {
+            //        if (i != j)
+            //            sum += arr[j];
+
+            //    }
+            //    list.Add(sum);
+            //}
+
+            //list.Sort();
+            //Console.WriteLine("{0} {1}", list[0], list[list.Count - 1]);
+
+            //string s = Console.ReadLine();
+            //string database = "abcdefghijklmnopqrstuvwxyz";
+            //char[] charbase = database.ToCharArray();
+            //List<char> lst = new List<char>();
+            //lst.AddRange(charbase);
+
+            //foreach (char c in s.ToLower())
+            //{
+            //    if (lst.Contains(c))
+            //    {
+            //        lst.Remove(c);
+            //    }
+            //}
+
+            //if(lst.Count != 0)
+            //{
+            //    Console.WriteLine("not pangram");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("pangram");
+            //}
+
+
+
+            //int i = 1;
+            //while (true)
+            //{
+            //    int crtNum = i * i;
+            //    if (crtNum <= 1000 && crtNum>=100) 
+            //    {
+            //        Console.Write(crtNum + ",");
+            //    }
+            //    else if (crtNum>1000)
+            //    {
+            //        break;
+            //    }
+            //    i++;
+            //}
 
 
             //checkdata("1,3,2,1,4,5,7,6,9,5,6,7");
 
 
-            String title = Console.ReadLine();
-            String author = Console.ReadLine();
-            int price = Int32.Parse(Console.ReadLine());
-            Book new_novel = new MyBook(title, author, price);
-            new_novel.display();
+            //String title = Console.ReadLine();
+            //String author = Console.ReadLine();
+            //int price = Int32.Parse(Console.ReadLine());
+            //Book new_novel = new MyBook(title, author, price);
+            //new_novel.display();
 
 
             //int[][] arr = new int[6][];
