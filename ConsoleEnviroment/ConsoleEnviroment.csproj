@@ -41,8 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animal.cs" />
+    <Compile Include="Bird.cs" />
     <Compile Include="Book.cs" />
     <Compile Include="Car.cs" />
+    <Compile Include="Dog.cs" />
+    <Compile Include="Flys.cs" />
     <Compile Include="MyBook.cs" />
     <Compile Include="OptionalParameter\OptionalParameter.cs" />
     <Compile Include="Person.cs" />
@@ -53,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="strategypattern.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -244,9 +244,20 @@ namespace ConsoleEnviroment
 
         static void Main(string[] args)
         {
-            string s = Console.ReadLine();
-            string result = timeConversion(s);
-            Console.WriteLine(result);
+            Animal sparky = new Dog();
+            Animal tweety = new Bird();
+
+            Console.WriteLine("Dog: "+ sparky.tryToFly());
+
+            Console.WriteLine("Bird: "+ tweety.tryToFly());
+
+            //This allows dynamic changes for flyingType
+            sparky.setFlyingAbility(new ItFlys());
+            Console.WriteLine("Dog: " + sparky.tryToFly());
+
+            //string s = Console.ReadLine();
+            //string result = timeConversion(s);
+            //Console.WriteLine(result);
 
 
 
