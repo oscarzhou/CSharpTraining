@@ -242,7 +242,7 @@ namespace ConsoleEnviroment
             return s_time;
         }
 
-        static void Main1(string[] args)
+        static void Main(string[] args)
         {
             Animal sparky = new Dog();
             Animal tweety = new Bird();
