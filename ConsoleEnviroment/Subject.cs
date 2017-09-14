@@ -1,12 +1,16 @@
 ﻿
 namespace ConsoleEnviroment
 {
+    /*
+     * This interface handles adding, deleting and updating
+     * all observers
+     */
     public interface Subject
     {
-        public void register(Observer o);
+        void Register(Observer o);
 
-        public void unregister(Observer o);
+        void Unregister(Observer o);
 
-        public void notifyObserver();
+        void NotifyObserver();
     }
 }

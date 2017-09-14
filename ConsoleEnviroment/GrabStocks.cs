@@ -1,9 +1,11 @@
 ﻿
+using System;
+
 namespace ConsoleEnviroment
 {
     public class GrabStocks
     {
-        public static void main(string[] args)
+        public static void Main(string[] args)
         {
             StockGrabber stockGrabber = new StockGrabber();
 
@@ -20,11 +22,14 @@ namespace ConsoleEnviroment
             stockGrabber.setAPPLPrice(677.60);
             stockGrabber.setGOOGPrice(676.40);
 
-            stockGrabber.unregister(observer1);
+            stockGrabber.Unregister(observer1);
 
             stockGrabber.setIBMPrice(197.00);
             stockGrabber.setAPPLPrice(677.60);
             stockGrabber.setGOOGPrice(676.40);
+
+
+            Console.ReadKey();
 
         }
     }
